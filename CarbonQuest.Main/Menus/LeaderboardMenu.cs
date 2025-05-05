@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarbonQuest.Main.Menus
+﻿namespace CarbonQuest.Main.Menus
 {
-    class LeaderboardMenu
+    public static class LeaderboardMenu
     {
+        public static void Show(CLIStateMachine stateMachine)
+        {
+            Console.Clear();
+            Console.WriteLine("====== Leaderboard ======");
+
+            // TODO: Fetch leaderboard dari API
+
+            Console.WriteLine("=========================");
+            Console.ReadKey();
+
+            stateMachine.ActivateTrigger(CLITrigger.BackToHome);
+        }
     }
 }

@@ -1,19 +1,19 @@
 ﻿namespace CarbonQuest.Main.Menus
 {
-    public static class LoginMenu
+    public static class SignupMenu
     {
         public static void Show(CLIStateMachine stateMachine)
         {
             Console.Clear();
-            Console.WriteLine("=== Masuk ===");
+            Console.WriteLine("=== Daftar ===");
             Console.Write("Username: ");
             var username = Console.ReadLine();
             Console.Write("Password: ");
             var password = Console.ReadLine();
 
-            // TODO: Call API Login
+            // TODO: Call API Register
 
-            stateMachine.ActivateTrigger(CLITrigger.LoginSuccess);
+            stateMachine.ActivateTrigger(CLITrigger.SignupSuccess);
         }
     }
 }
