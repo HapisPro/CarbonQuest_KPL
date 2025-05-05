@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarbonQuest.Lib.Utils
+﻿namespace CarbonQuest.Lib.Utils
 {
-    class Validator
+    public static class Validator
     {
+        public static void CheckNotNull(object? obj, string paramName)
+        {
+            if (obj == null) throw new ArgumentNullException(paramName);
+        }
+
+        public static void CheckStringNotEmpty(string? str, string paramName)
+        {
+            if (string.IsNullOrWhiteSpace(str)) throw new ArgumentException($"{paramName} cannot be null or empty.");
+        }
     }
 }

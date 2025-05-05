@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarbonQuest.Lib.Interfaces
+﻿namespace CarbonQuest.Lib.Interfaces
 {
-    class IRepository
+    public interface IRepository<T>
     {
+        List<T> GetAll();
+        T? GetById(string id);
+        void Add(T item);
+        void SaveChanges();
     }
 }
