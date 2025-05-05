@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarbonQuest.API", "CarbonQuest.API\CarbonQuest.API.csproj", "{6478918F-1F01-4C08-9064-B0C8C93ACA54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarbonQuest.Main", "CarbonQuest.Main\CarbonQuest.Main.csproj", "{8AD19BCD-769E-4954-9CE7-386CB0F0D01A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarbonQuest.Lib", "CarbonQuest.Lib\CarbonQuest.Lib.csproj", "{2AA20080-6B03-496B-A961-65BAC00F462F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6478918F-1F01-4C08-9064-B0C8C93ACA54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6478918F-1F01-4C08-9064-B0C8C93ACA54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6478918F-1F01-4C08-9064-B0C8C93ACA54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6478918F-1F01-4C08-9064-B0C8C93ACA54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD19BCD-769E-4954-9CE7-386CB0F0D01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD19BCD-769E-4954-9CE7-386CB0F0D01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD19BCD-769E-4954-9CE7-386CB0F0D01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD19BCD-769E-4954-9CE7-386CB0F0D01A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AA20080-6B03-496B-A961-65BAC00F462F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AA20080-6B03-496B-A961-65BAC00F462F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AA20080-6B03-496B-A961-65BAC00F462F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AA20080-6B03-496B-A961-65BAC00F462F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CarbonQuest.API\CarbonQuest.API.csproj" />
+    <ProjectReference Include="..\CarbonQuest.Lib\CarbonQuest.Lib.csproj" />
+  </ItemGroup>
+
 </Project>
