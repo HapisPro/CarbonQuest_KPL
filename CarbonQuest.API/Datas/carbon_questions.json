@@ -1,3 +1,74 @@
-{
-
-}
+[
+  {
+    "Id": "q1",
+    "Question": "Berapa kali anda menggunakan kendaraan pribadi dalam seminggu?",
+    "Choices": [
+      {
+        "Answer": "A. 0-2 kali",
+        "Score": 10
+      },
+      {
+        "Answer": "B. 3-5 kali",
+        "Score": 5
+      },
+      {
+        "Answer": "C. >5 kali",
+        "Score": 2
+      }
+    ]
+  },
+  {
+    "Id": "q2",
+    "Question": "Berapa banyak sampah yang Anda hasilkan hari ini?",
+    "Choices": [
+      {
+        "Answer": "A. Kurang dari 0,5 kg",
+        "Score": 10
+      },
+      {
+        "Answer": "B. Antara 0,5 hingga 1 kg",
+        "Score": 5
+      },
+      {
+        "Answer": "C. Lebih dari 1 kg",
+        "Score": 2
+      }
+    ]
+  },
+  {
+    "Id": "q3",
+    "Question": "Apakah Anda menggunakan air secara hemat hari ini (misalnya saat mandi atau mencuci)?",
+    "Choices": [
+      {
+        "Answer": "A. Ya",
+        "Score": 10
+      },
+      {
+        "Answer": "B. Sedikit lebih hemat",
+        "Score": 5
+      },
+      {
+        "Answer": "C. Tidak",
+        "Score": 2
+      }
+    ]
+  },
+  {
+    "Id": "q4",
+    "Question": "Apakah Anda mengonsumsi daging merah (sapi/kambing) hari ini?",
+    "Choices": [
+      {
+        "Answer": "A. Tidak",
+        "Score": 10
+      },
+      {
+        "Answer": "B. Ya, sekali",
+        "Score": 5
+      },
+      {
+        "Answer": "C. Ya, lebih dari sekali",
+        "Score": 2
+      }
+    ]
+  }
+]

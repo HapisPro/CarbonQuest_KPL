@@ -1,3 +1,37 @@
-{
-
-}
+[
+  {
+    "id_user": "u1",
+    "username": "Hapis",
+    "password": "1998",
+    "score": 142,
+    "active": false
+  },
+  {
+    "id_user": "u2",
+    "username": "Albert",
+    "password": "12345",
+    "score": 93,
+    "active": false
+  },
+  {
+    "id_user": "u3",
+    "username": "Bintang",
+    "password": "55555",
+    "score": 69,
+    "active": false
+  },
+  {
+    "id_user": "u4",
+    "username": "Nico",
+    "password": "1234",
+    "score": 69,
+    "active": false
+  },
+  {
+    "id_user": "u5",
+    "username": "Syarif",
+    "password": "1234",
+    "score": 69,
+    "active": false
+  }
+]
