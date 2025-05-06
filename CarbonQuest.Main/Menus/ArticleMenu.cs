@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarbonQuest.Main.Menus
+﻿namespace CarbonQuest.Main.Menus
 {
-    class ArticleMenu
+    public static class ArticleMenu
     {
+        public static void Show(CLIStateMachine stateMachine)
+        {
+            Console.Clear();
+            Console.WriteLine("===== Artikel =====");
+
+            // TODO: Fetch list artikel dari API
+
+            Console.WriteLine("a. Tambah artikel");
+            Console.Write("> ");
+            var input = Console.ReadLine();
+
+            if (input == "a")
+                stateMachine.ActivateTrigger(CLITrigger.ArticleAddSelected);
+            else
+                stateMachine.ActivateTrigger(CLITrigger.ArticleDetailSelected);
+        }
     }
+
 }
