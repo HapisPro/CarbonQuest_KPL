@@ -1,3 +1,20 @@
-{
-
-}
+[
+  {
+    "id_article": "a1",
+    "title": "Strategi Efektif Mengurangi Emisi Karbon di Kehidupan Sehari-hari",
+    "date": "2025-06-05",
+    "content": "Emisi karbon menjadi penyumbang utama perubahan iklim global. Artikel ini membahas berbagai strategi praktis yang dapat dilakukan individu dan komunitas untuk mengurangi emisi karbon, mulai dari pengurangan penggunaan kendaraan bermotor hingga efisiensi energi di rumah dan konsumsi makanan yang lebih berkelanjutan."
+  },
+  {
+    "id_article": "a2",
+    "title": "Tren Inovasi Lingkungan dalam Upaya Menekan Emisi Karbon Tahun 2025",
+    "date": "2025-05-04",
+    "content": "Tahun 2025 menandai munculnya berbagai inovasi ramah lingkungan yang dirancang untuk mengurangi emisi karbon secara signifikan. Artikel ini mengulas tren seperti pengembangan material hijau, penggunaan energi terbarukan, transportasi rendah emisi, dan peran penting desain berkelanjutan dalam berbagai sektor."
+  },
+  {
+    "id_article": "a3",
+    "title": "Optimalisasi Teknologi untuk Reduksi Emisi Karbon Global",
+    "date": "2025-05-04",
+    "content": "Pemanfaatan teknologi cerdas memainkan peran besar dalam menekan emisi karbon secara global. Artikel ini mengkaji bagaimana teknologi seperti kecerdasan buatan, sistem pemantauan emisi, dan analisis data dapat digunakan untuk meningkatkan efisiensi energi dan mengidentifikasi solusi terbaik dalam pengurangan karbon di berbagai industri."
+  }
+]
