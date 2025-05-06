@@ -24,8 +24,8 @@
     "id_user": "u4",
     "username": "Nico",
     "password": "1234",
-    "score": 69,
-    "active": false
+    "score": 88,
+    "active": true
   },
   {
     "id_user": "u5",
