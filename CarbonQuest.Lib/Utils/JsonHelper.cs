@@ -19,5 +19,15 @@ namespace CarbonQuest.Lib.Utils
             var json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
         }
+
+        public static T FromJson<T>(string json)
+        {
+            return JsonSerializer.Deserialize<T>(json) ?? Activator.CreateInstance<T>();
+        }
+
+        public static string ToJson<T>(T data)
+        {
+            return JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
+        }
     }
 }
