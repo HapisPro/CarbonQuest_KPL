@@ -6,7 +6,7 @@
         {
             Console.Clear();
             Console.WriteLine("========== CarbonQuest ==========");
-            Console.WriteLine("Halo, Username"); // TODO: replace user
+            Console.WriteLine($"Halo, {LoginMenu.LoggedInUsername}");  
             Console.WriteLine("1. Hitung Jejak Karbon");
             Console.WriteLine("2. Leaderboard");
             Console.WriteLine("3. Artikel");
@@ -27,6 +27,7 @@
                     stateMachine.ActivateTrigger(CLITrigger.ArticleSelected);
                     break;
                 case "9":
+                    APIClient.LogoutAsync().Wait();
                     stateMachine.ActivateTrigger(CLITrigger.Logout);
                     break;
             }

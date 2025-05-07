@@ -1,4 +1,6 @@
-﻿namespace CarbonQuest.Main.Menus
+﻿using CarbonQuest.Main.Models;
+
+namespace CarbonQuest.Main.Menus
 {
     public static class CalculatorMenu
     {
@@ -7,28 +9,26 @@
             Console.Clear();
             Console.WriteLine("========== Kalkulator ==========");
 
-            // TODO: Fetch pertanyaan dari API
+            var questions = APIClient.GetCalculatorQuestionsAsync().Result;
+            var answers = new List<string>();
 
-            Console.WriteLine("Jawab pertanyaan sesuai pilihan A/B/C.");
-            Console.WriteLine("Berapa kali menggunakan kendaraan pribadi?");
-            Console.Write("> ");
-            var q1 = Console.ReadLine();
+            foreach (var question in questions)
+            {
+                Console.WriteLine(question.Question);
 
-            Console.WriteLine("Berapa banyak sampah yang Anda hasilkan hari ini?");
-            Console.Write("> ");
-            var q2 = Console.ReadLine();
+                for (int i = 0; i < question.Choices.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {question.Choices[i].Answer}");
+                }
 
-            Console.WriteLine("Apakah Anda menggunakan air secara hemat?");
-            Console.Write("> ");
-            var q3 = Console.ReadLine();
+                Console.Write("> ");
+                var jawaban = Console.ReadLine();
+                answers.Add(jawaban);
+            }
 
-            Console.WriteLine("Apakah Anda mengonsumsi daging merah?");
-            Console.Write("> ");
-            var q4 = Console.ReadLine();
+            APIClient.SubmitCalculatorAnswersAsync(answers).Wait();
 
-            // TODO: Submit ke API
-
-            Console.WriteLine("Skor berhasil disimpan!");
+            Console.WriteLine("Skor berhasil disimpan! Tekan enter untuk kembali.");
             Console.ReadKey();
 
             stateMachine.ActivateTrigger(CLITrigger.BackToHome);
