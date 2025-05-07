@@ -3,7 +3,7 @@
     "id_user": "u1",
     "username": "Hapis",
     "password": "1998",
-    "score": 142,
+    "score": 169,
     "active": false
   },
   {
@@ -25,7 +25,7 @@
     "username": "Nico",
     "password": "1234",
     "score": 88,
-    "active": true
+    "active": false
   },
   {
     "id_user": "u5",
