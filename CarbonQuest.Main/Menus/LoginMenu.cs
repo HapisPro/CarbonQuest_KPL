@@ -2,6 +2,9 @@
 {
     public static class LoginMenu
     {
+        // Tambahkan variabel global untuk menyimpan username
+        public static string LoggedInUsername { get; set; }
+
         public static void Show(CLIStateMachine stateMachine)
         {
             Console.Clear();
@@ -11,9 +14,22 @@
             Console.Write("Password: ");
             var password = Console.ReadLine();
 
-            // TODO: Call API Login
+            var success = APIClient.LoginAsync(username, password).Result;
 
-            stateMachine.ActivateTrigger(CLITrigger.LoginSuccess);
+            if (success)
+            {
+                // Simpan username setelah login berhasil
+                LoggedInUsername = username;
+
+                Console.WriteLine("Login berhasil!");
+                stateMachine.ActivateTrigger(CLITrigger.LoginSuccess);
+            }
+            else
+            {
+                Console.WriteLine("Login gagal. Tekan enter untuk kembali.");
+                Console.ReadKey();
+                stateMachine.ActivateTrigger(CLITrigger.BackToHome);
+            }
         }
     }
 }

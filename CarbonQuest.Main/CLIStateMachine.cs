@@ -68,21 +68,24 @@ namespace CarbonQuest.Main
         new StateTransition(CLIState.Welcome, CLITrigger.LoginSelected, CLIState.Login),
         new StateTransition(CLIState.Welcome, CLITrigger.SignupSelected, CLIState.Signup),
         new StateTransition(CLIState.Login, CLITrigger.LoginSuccess, CLIState.Home),
+        new StateTransition(CLIState.Login, CLITrigger.BackToHome, CLIState.Welcome),
         new StateTransition(CLIState.Signup, CLITrigger.SignupSuccess, CLIState.Home),
         new StateTransition(CLIState.Home, CLITrigger.CalculatorSelected, CLIState.Calculator),
         new StateTransition(CLIState.Home, CLITrigger.LeaderboardSelected, CLIState.Leaderboard),
         new StateTransition(CLIState.Home, CLITrigger.ArticleSelected, CLIState.ArticleList),
         new StateTransition(CLIState.ArticleList, CLITrigger.ArticleAddSelected, CLIState.ArticleAdd),
         new StateTransition(CLIState.ArticleList, CLITrigger.ArticleDetailSelected, CLIState.ArticleDetail),
-        new StateTransition(CLIState.ArticleDetail, CLITrigger.ArticleEditSelected, CLIState.ArticleEdit),
-        new StateTransition(CLIState.ArticleDetail, CLITrigger.ArticleDeleteSelected, CLIState.ArticleDeleteConfirm),
-        new StateTransition(CLIState.ArticleDeleteConfirm, CLITrigger.ArticleDeleteConfirmed, CLIState.Home),
+        new StateTransition(CLIState.ArticleList, CLITrigger.ArticleEditSelected, CLIState.ArticleEdit),
+        new StateTransition(CLIState.ArticleList, CLITrigger.ArticleDeleteSelected, CLIState.ArticleDeleteConfirm),
+        new StateTransition(CLIState.ArticleDeleteConfirm, CLITrigger.ArticleDeleteConfirmed, CLIState.ArticleList),
         new StateTransition(CLIState.ArticleDeleteConfirm, CLITrigger.ArticleDeleteCanceled, CLIState.ArticleDetail),
-        new StateTransition(CLIState.ArticleEdit, CLITrigger.BackToHome, CLIState.Home),
+        new StateTransition(CLIState.ArticleEdit, CLITrigger.BackToHome, CLIState.ArticleList),
         new StateTransition(CLIState.Leaderboard, CLITrigger.BackToHome, CLIState.Home),
         new StateTransition(CLIState.Calculator, CLITrigger.BackToHome, CLIState.Home),
         new StateTransition(CLIState.ArticleList, CLITrigger.BackToHome, CLIState.Home),
-        new StateTransition(CLIState.ArticleAdd, CLITrigger.BackToHome, CLIState.Home),
+        new StateTransition(CLIState.ArticleAdd, CLITrigger.BackToHome, CLIState.ArticleList),
+        new StateTransition(CLIState.ArticleDetail, CLITrigger.BackToHome, CLIState.ArticleList),
+        new StateTransition(CLIState.Signup, CLITrigger.BackToHome, CLIState.Login),
         new StateTransition(CLIState.Home, CLITrigger.Logout, CLIState.Welcome),
     };
 
@@ -105,7 +108,7 @@ namespace CarbonQuest.Main
             if (validTransition != null)
             {
                 _currentState = validTransition.NextState;
-                Console.WriteLine($"[DEBUG] State berubah ke: {_currentState}");
+                //Console.WriteLine($"[DEBUG] State berubah ke: {_currentState}");
             }
             else
             {

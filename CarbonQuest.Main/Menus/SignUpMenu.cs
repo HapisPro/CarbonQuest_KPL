@@ -11,9 +11,21 @@
             Console.Write("Password: ");
             var password = Console.ReadLine();
 
-            // TODO: Call API Register
+            var success = APIClient.SignupAsync(username, password).Result;
 
-            stateMachine.ActivateTrigger(CLITrigger.SignupSuccess);
+            if (success)
+            {
+                Console.WriteLine("Pendaftaran berhasil!");
+                Console.WriteLine("Tekan tombol apa saja untuk kembali ke halaman login.");
+                Console.ReadKey();
+                stateMachine.ActivateTrigger(CLITrigger.BackToHome); 
+            }
+            else
+            {
+                Console.WriteLine("Pendaftaran gagal. Tekan enter untuk kembali.");
+                Console.ReadKey();
+                stateMachine.ActivateTrigger(CLITrigger.BackToHome);
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using CarbonQuest.Main;
+﻿using CarbonQuest.Main.Models;
 
 namespace CarbonQuest.Main.Menus
 {
@@ -6,14 +6,16 @@ namespace CarbonQuest.Main.Menus
     {
         public static void Show(CLIStateMachine stateMachine)
         {
-            Console.Clear();
-            Console.WriteLine("Yakin ingin menghapus artikel (Y/N): ");
+            Console.Write("Masukkan ID Artikel yang akan dihapus: ");
+            var articleId = Console.ReadLine();
+
+            Console.Write("Yakin ingin menghapus artikel (Y/N): ");
             var input = Console.ReadLine();
 
             if (input?.ToUpper() == "Y")
             {
-                // TODO: Call API DELETE
-
+                APIClient.DeleteArticleAsync(articleId).Wait();
+ 
                 stateMachine.ActivateTrigger(CLITrigger.ArticleDeleteConfirmed);
             }
             else
@@ -22,5 +24,4 @@ namespace CarbonQuest.Main.Menus
             }
         }
     }
-
 }

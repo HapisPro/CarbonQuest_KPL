@@ -4,19 +4,29 @@
     {
         public static void Show(CLIStateMachine stateMachine)
         {
-            Console.Clear();
-            Console.WriteLine("=== Judul Artikel ===");
-            Console.WriteLine("<tanggal>");
-            Console.WriteLine("<Isi artikel>");
-            Console.WriteLine("1. Edit");
-            Console.WriteLine("2. Hapus");
+            Console.Write("Masukkan ID Artikel: ");
+            var articleId = Console.ReadLine();
+
+            var article = APIClient.GetArticleByIdAsync(articleId).Result;
+
+            if (article == null)
+            {
+                Console.WriteLine("Artikel tidak ditemukan.");
+                Console.ReadKey();
+                stateMachine.ActivateTrigger(CLITrigger.BackToHome);
+                return;
+            }
+
+            Console.WriteLine($"=== {article.Title} ===");
+            Console.WriteLine(article.Date);
+            Console.WriteLine(article.Content);
+            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine("0. Kembali");
             Console.Write("> ");
             var input = Console.ReadLine();
-
-            if (input == "1")
-                stateMachine.ActivateTrigger(CLITrigger.ArticleEditSelected);
-            else if (input == "2")
-                stateMachine.ActivateTrigger(CLITrigger.ArticleDeleteSelected);
+            
+            if (input == "0")
+                stateMachine.ActivateTrigger(CLITrigger.BackToHome);
         }
     }
 }
