@@ -29,10 +29,10 @@ partial class DaftarArtikel
     private void InitializeComponent()
     {
         lblLogo = new Label();
-        btnLeaderboard = new Button();
         button1 = new Button();
         button2 = new Button();
         btnHome = new Button();
+        btnArticle1 = new Button();
         SuspendLayout();
         // 
         // lblLogo
@@ -45,19 +45,6 @@ partial class DaftarArtikel
         lblLogo.Size = new Size(235, 47);
         lblLogo.TabIndex = 5;
         lblLogo.Text = "CarbonQuest";
-        // 
-        // btnLeaderboard
-        // 
-        btnLeaderboard.BackColor = Color.FromArgb(0, 192, 0);
-        btnLeaderboard.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btnLeaderboard.ForeColor = SystemColors.ButtonHighlight;
-        btnLeaderboard.Location = new Point(12, 86);
-        btnLeaderboard.Name = "btnLeaderboard";
-        btnLeaderboard.Size = new Size(776, 112);
-        btnLeaderboard.TabIndex = 6;
-        btnLeaderboard.Text = "Judul Artikel 1";
-        btnLeaderboard.TextAlign = ContentAlignment.MiddleLeft;
-        btnLeaderboard.UseVisualStyleBackColor = false;
         // 
         // button1
         // 
@@ -94,16 +81,32 @@ partial class DaftarArtikel
         btnHome.TabIndex = 9;
         btnHome.Text = "Home";
         btnHome.UseVisualStyleBackColor = true;
+        btnHome.Click += btnHome_Click;
+        // 
+        // btnArticle1
+        // 
+        btnArticle1.BackColor = Color.FromArgb(0, 192, 0);
+        btnArticle1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        btnArticle1.ForeColor = SystemColors.ButtonHighlight;
+        btnArticle1.Location = new Point(12, 86);
+        btnArticle1.Name = "btnArticle1";
+        btnArticle1.RightToLeft = RightToLeft.No;
+        btnArticle1.Size = new Size(776, 112);
+        btnArticle1.TabIndex = 10;
+        btnArticle1.Text = "Judul Artikel 1";
+        btnArticle1.TextAlign = ContentAlignment.MiddleLeft;
+        btnArticle1.UseVisualStyleBackColor = false;
+        btnArticle1.Click += btnArticle1_Click;
         // 
         // DaftarArtikel
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 501);
+        Controls.Add(btnArticle1);
         Controls.Add(btnHome);
         Controls.Add(button2);
         Controls.Add(button1);
-        Controls.Add(btnLeaderboard);
         Controls.Add(lblLogo);
         Name = "DaftarArtikel";
         Text = "DaftarArtikel";
@@ -114,8 +117,8 @@ partial class DaftarArtikel
     #endregion
 
     private Label lblLogo;
-    private Button btnLeaderboard;
     private Button button1;
     private Button button2;
     private Button btnHome;
+    private Button btnArticle1;
 }

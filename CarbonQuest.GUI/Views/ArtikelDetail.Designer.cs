@@ -31,8 +31,8 @@ partial class ArtikelDetail
         btnKembali = new Button();
         btnEdit = new Button();
         btnHapus = new Button();
-        richTextBox1 = new RichTextBox();
-        textBox1 = new TextBox();
+        tbxArtikel = new RichTextBox();
+        tbxJudul = new TextBox();
         SuspendLayout();
         // 
         // btnKembali
@@ -44,6 +44,7 @@ partial class ArtikelDetail
         btnKembali.TabIndex = 10;
         btnKembali.Text = "Kembali";
         btnKembali.UseVisualStyleBackColor = true;
+        btnKembali.Click += btnKembali_Click;
         // 
         // btnEdit
         // 
@@ -56,6 +57,7 @@ partial class ArtikelDetail
         btnEdit.TabIndex = 13;
         btnEdit.Text = "Edit";
         btnEdit.UseVisualStyleBackColor = false;
+        btnEdit.Click += btnEdit_Click;
         // 
         // btnHapus
         // 
@@ -68,32 +70,33 @@ partial class ArtikelDetail
         btnHapus.TabIndex = 14;
         btnHapus.Text = "Hapus";
         btnHapus.UseVisualStyleBackColor = false;
+        btnHapus.Click += btnHapus_Click;
         // 
-        // richTextBox1
+        // tbxArtikel
         // 
-        richTextBox1.Location = new Point(12, 130);
-        richTextBox1.Name = "richTextBox1";
-        richTextBox1.ScrollBars = RichTextBoxScrollBars.None;
-        richTextBox1.Size = new Size(776, 308);
-        richTextBox1.TabIndex = 15;
-        richTextBox1.Text = "Isi artikel";
+        tbxArtikel.Location = new Point(12, 130);
+        tbxArtikel.Name = "tbxArtikel";
+        tbxArtikel.ScrollBars = RichTextBoxScrollBars.None;
+        tbxArtikel.Size = new Size(776, 308);
+        tbxArtikel.TabIndex = 15;
+        tbxArtikel.Text = "Isi artikel";
         // 
-        // textBox1
+        // tbxJudul
         // 
-        textBox1.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        textBox1.Location = new Point(12, 87);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new Size(776, 34);
-        textBox1.TabIndex = 16;
-        textBox1.Text = "Judul Artikel";
+        tbxJudul.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        tbxJudul.Location = new Point(12, 87);
+        tbxJudul.Name = "tbxJudul";
+        tbxJudul.Size = new Size(776, 34);
+        tbxJudul.TabIndex = 16;
+        tbxJudul.Text = "Judul Artikel";
         // 
         // ArtikelDetail
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
-        Controls.Add(textBox1);
-        Controls.Add(richTextBox1);
+        Controls.Add(tbxJudul);
+        Controls.Add(tbxArtikel);
         Controls.Add(btnHapus);
         Controls.Add(btnEdit);
         Controls.Add(btnKembali);
@@ -108,6 +111,6 @@ partial class ArtikelDetail
     private Button btnKembali;
     private Button btnEdit;
     private Button btnHapus;
-    private RichTextBox richTextBox1;
-    private TextBox textBox1;
+    private RichTextBox tbxArtikel;
+    private TextBox tbxJudul;
 }

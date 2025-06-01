@@ -1,18 +1,16 @@
-using CarbonQuest.GUI.Views;
+using System;
+using System.Windows.Forms;
+using CarbonQuest.GUI.Controllers;
 
-namespace CarbonQuest.GUI;
-
-internal static class Program
+namespace CarbonQuest.GUI
 {
-    /// <summary>
-    ///  The main entry point for the application.
-    /// </summary>
-    [STAThread]
-    static void Main()
+    internal static class Program
     {
-        // To customize application configuration such as set high DPI settings or default font,
-        // see https://aka.ms/applicationconfiguration.
-        ApplicationConfiguration.Initialize();
-        Application.Run(new Login());
+        [STAThread]
+        static void Main()
+        {
+            ApplicationConfiguration.Initialize();
+            Application.Run(new CarbonQuestContext());
+        }
     }
 }

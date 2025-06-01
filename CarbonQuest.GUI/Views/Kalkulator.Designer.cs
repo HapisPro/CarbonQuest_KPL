@@ -152,6 +152,7 @@ partial class Kalkulator
         btnSimpan.TabIndex = 12;
         btnSimpan.Text = "Simpan";
         btnSimpan.UseVisualStyleBackColor = true;
+        btnSimpan.Click += btnSimpan_Click;
         // 
         // Kalkulator
         // 

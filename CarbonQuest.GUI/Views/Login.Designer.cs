@@ -37,6 +37,7 @@ partial class Login
         btnLogin = new Button();
         lblNavSingup = new Label();
         lblError = new Label();
+        cbxShowPw = new CheckBox();
         SuspendLayout();
         // 
         // lblLogo
@@ -101,18 +102,19 @@ partial class Login
         btnLogin.BackColor = Color.FromArgb(0, 192, 0);
         btnLogin.Font = new Font("Segoe UI", 11F);
         btnLogin.ForeColor = SystemColors.ButtonHighlight;
-        btnLogin.Location = new Point(244, 285);
+        btnLogin.Location = new Point(244, 298);
         btnLogin.Name = "btnLogin";
         btnLogin.Size = new Size(306, 31);
         btnLogin.TabIndex = 6;
         btnLogin.Text = "Login";
         btnLogin.UseVisualStyleBackColor = false;
+        btnLogin.Click += btnLogin_Click;
         // 
         // lblNavSingup
         // 
         lblNavSingup.AutoSize = true;
         lblNavSingup.Font = new Font("Segoe UI", 9.75F, FontStyle.Underline, GraphicsUnit.Point, 0);
-        lblNavSingup.Location = new Point(335, 319);
+        lblNavSingup.Location = new Point(335, 332);
         lblNavSingup.Name = "lblNavSingup";
         lblNavSingup.Size = new Size(119, 17);
         lblNavSingup.TabIndex = 7;
@@ -123,6 +125,7 @@ partial class Login
         // 
         lblError.AutoSize = true;
         lblError.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        lblError.ForeColor = Color.Red;
         lblError.Location = new Point(244, 182);
         lblError.Name = "lblError";
         lblError.Size = new Size(157, 17);
@@ -130,11 +133,22 @@ partial class Login
         lblError.Text = "error message goes here";
         lblError.TextAlign = ContentAlignment.MiddleCenter;
         // 
+        // cbxShowPw
+        // 
+        cbxShowPw.AutoSize = true;
+        cbxShowPw.Location = new Point(324, 269);
+        cbxShowPw.Name = "cbxShowPw";
+        cbxShowPw.Size = new Size(108, 19);
+        cbxShowPw.TabIndex = 9;
+        cbxShowPw.Text = "Show Password";
+        cbxShowPw.UseVisualStyleBackColor = true;
+        // 
         // Login
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 450);
+        Controls.Add(cbxShowPw);
         Controls.Add(lblError);
         Controls.Add(lblNavSingup);
         Controls.Add(btnLogin);
@@ -161,4 +175,5 @@ partial class Login
     private Button btnLogin;
     private Label lblNavSingup;
     private Label lblError;
+    private CheckBox cbxShowPw;
 }
