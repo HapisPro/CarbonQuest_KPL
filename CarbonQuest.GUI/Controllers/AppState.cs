@@ -11,7 +11,8 @@ namespace CarbonQuest.GUI.Controllers
         private static AppState _instance;
         public static AppState Instance => _instance ??= new AppState();
 
+        private AppState() { }
+
         public string LoggedInUsername { get; set; }
     }
-
 }

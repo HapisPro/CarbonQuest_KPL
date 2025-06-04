@@ -9,7 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\CarbonQuest.API\CarbonQuest.API.csproj" />
+    <ProjectReference Include="..\CarbonQuest.Lib\CarbonQuest.Lib.csproj" />
   </ItemGroup>
 
 </Project>

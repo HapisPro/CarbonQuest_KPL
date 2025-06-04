@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using CarbonQuest.GUI.Controllers;
+using CarbonQuest.Lib.Utils;
 
 namespace CarbonQuest.GUI.Views
 {
@@ -23,7 +24,7 @@ namespace CarbonQuest.GUI.Views
             btnSignup.Click += btnSignup_Click;
         }
 
-        private void btnSignup_Click(object sender, EventArgs e)
+        private async void btnSignup_Click(object sender, EventArgs e)
         {
             lblError.Visible = false;
 
@@ -34,21 +35,23 @@ namespace CarbonQuest.GUI.Views
                 return;
             }
 
+            if (!Validator.ValidatePassword(formPassword.Text))
+            {
+                lblError.Text = "Password harus minimal 8 karakter, mengandung huruf besar dan simbol.";
+                lblError.Visible = true;
+                return;
+            }
+
+
             try
             {
-                // TODO: Ganti dengan API call signup yang async jika perlu
-                bool signupSuccess = true; // simulasikan signup berhasil
+                bool signupSuccess = await APIClient.SignupAsync(formUsername.Text, formPassword.Text);
 
                 if (signupSuccess)
                 {
                     MessageBox.Show("Signup berhasil. Silakan login.");
                     Navigator.Instance.Navigate(AppRoute.Login);
                     this.Close();
-                }
-                else
-                {
-                    lblError.Text = "Signup gagal.";
-                    lblError.Visible = true;
                 }
             }
             catch (Exception ex)
