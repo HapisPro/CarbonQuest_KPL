@@ -12,7 +12,7 @@ namespace CarbonQuest.API.Repositories
 
         public ArticleRepository()
         {
-            _articles = JsonHelper.LoadFromFile<Article>(FilePath);
+            _articles = JsonHelper.Instance.LoadFromFile<Article>(FilePath);
             Debug.Assert(_articles != null, "Articles tidak boleh null");
         }
 
@@ -61,7 +61,7 @@ namespace CarbonQuest.API.Repositories
 
         public void SaveChanges()
         {
-            JsonHelper.SaveToFile(FilePath, _articles);
+            JsonHelper.Instance.SaveToFile(FilePath, _articles);
             Debug.Assert(File.Exists(FilePath), "Save gagal, file tidak ditemukan.");
         }
     }

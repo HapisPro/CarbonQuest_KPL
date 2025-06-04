@@ -12,10 +12,7 @@ namespace CarbonQuest.API.Repositories
 
         public UserRepository()
         {
-            // Load data dari file
-            _users = JsonHelper.LoadFromFile<User>(FilePath);
-
-            // Defensive + DBC
+            _users = JsonHelper.Instance.LoadFromFile<User>(FilePath);
             Debug.Assert(_users != null, "Users data should not be null after loading.");
         }
 
@@ -44,7 +41,7 @@ namespace CarbonQuest.API.Repositories
 
         public void SaveChanges()
         {
-            JsonHelper.SaveToFile(FilePath, _users);
+            JsonHelper.Instance.SaveToFile(FilePath, _users);
 
             Debug.Assert(File.Exists(FilePath), "Failed to save users data to file.");
         }

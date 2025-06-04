@@ -47,7 +47,7 @@ namespace CarbonQuest.Main
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                return JsonHelper.FromJson<List<MainArticle>>(json);
+                return JsonHelper.Instance.FromJson<List<MainArticle>>(json);
             }
 
             return new List<MainArticle>();
@@ -65,7 +65,7 @@ namespace CarbonQuest.Main
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                return JsonHelper.FromJson<MainArticle>(json);
+                return JsonHelper.Instance.FromJson<MainArticle>(json);
             }
 
             return null;
@@ -91,7 +91,7 @@ namespace CarbonQuest.Main
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                return JsonHelper.FromJson<List<CarbonQuestion>>(json);
+                return JsonHelper.Instance.FromJson<List<CarbonQuestion>>(json);
             }
 
             return new List<CarbonQuestion>();
@@ -112,7 +112,7 @@ namespace CarbonQuest.Main
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                return JsonHelper.FromJson<List<LeaderboardEntry>>(json);
+                return JsonHelper.Instance.FromJson<List<LeaderboardEntry>>(json);
             }
 
             return new List<LeaderboardEntry>();
