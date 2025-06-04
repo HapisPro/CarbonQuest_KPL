@@ -11,5 +11,24 @@
         {
             if (string.IsNullOrWhiteSpace(str)) throw new ArgumentException($"{paramName} cannot be null or empty.");
         }
+
+        public static bool ValidatePassword(string password)
+        {
+            if (string.IsNullOrEmpty(password) || password.Length < 8)
+                return false;
+
+            bool hasUpper = false;
+            bool hasSymbol = false;
+
+            foreach (char c in password)
+            {
+                if (char.IsUpper(c))
+                    hasUpper = true;
+                else if (!char.IsLetterOrDigit(c))
+                    hasSymbol = true;
+            }
+
+            return hasUpper && hasSymbol;
+        }
     }
 }
