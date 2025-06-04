@@ -12,7 +12,7 @@ namespace CarbonQuest.API.Repositories
 
         public CarbonQuestionRepository()
         {
-            _questions = JsonHelper.LoadFromFile<CarbonQuestion>(FilePath);
+            _questions = JsonHelper.Instance.LoadFromFile<CarbonQuestion>(FilePath);
             Debug.Assert(_questions != null, "Questions tidak boleh null");
         }
 
