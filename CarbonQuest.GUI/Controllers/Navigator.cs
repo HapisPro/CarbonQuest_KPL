@@ -41,8 +41,8 @@ namespace CarbonQuest.GUI.Controllers
                 AppRoute.Home => new Home(),
                 AppRoute.Kalkulator => new Kalkulator(),
                 AppRoute.DaftarArtikel => new DaftarArtikel(),
-                AppRoute.ArtikelDetail when parameter is Tuple<string, string> p 
-                    => new ArtikelDetail(p.Item1, p.Item2),
+                AppRoute.ArtikelDetail when parameter == null => new ArtikelDetail(null, string.Empty, string.Empty),
+                AppRoute.ArtikelDetail when parameter is Tuple<string, string, string> p => new ArtikelDetail(p.Item1, p.Item2, p.Item3),
                 _ => throw new NotImplementedException($"Route {route} belum diimplementasi"),
             };
 

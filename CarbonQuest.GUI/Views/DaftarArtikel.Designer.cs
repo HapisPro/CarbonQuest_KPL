@@ -29,10 +29,9 @@ partial class DaftarArtikel
     private void InitializeComponent()
     {
         lblLogo = new Label();
-        button1 = new Button();
-        button2 = new Button();
         btnHome = new Button();
-        btnArticle1 = new Button();
+        flowLayoutPanelArticle = new FlowLayoutPanel();
+        btnTambah = new Button();
         SuspendLayout();
         // 
         // lblLogo
@@ -46,32 +45,6 @@ partial class DaftarArtikel
         lblLogo.TabIndex = 5;
         lblLogo.Text = "CarbonQuest";
         // 
-        // button1
-        // 
-        button1.BackColor = Color.FromArgb(0, 192, 0);
-        button1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        button1.ForeColor = SystemColors.ButtonHighlight;
-        button1.Location = new Point(12, 213);
-        button1.Name = "button1";
-        button1.Size = new Size(776, 112);
-        button1.TabIndex = 7;
-        button1.Text = "Judul Artikel 2";
-        button1.TextAlign = ContentAlignment.MiddleLeft;
-        button1.UseVisualStyleBackColor = false;
-        // 
-        // button2
-        // 
-        button2.BackColor = Color.FromArgb(0, 192, 0);
-        button2.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        button2.ForeColor = SystemColors.ButtonHighlight;
-        button2.Location = new Point(12, 342);
-        button2.Name = "button2";
-        button2.Size = new Size(776, 112);
-        button2.TabIndex = 8;
-        button2.Text = "Judul Artikel 3";
-        button2.TextAlign = ContentAlignment.MiddleLeft;
-        button2.UseVisualStyleBackColor = false;
-        // 
         // btnHome
         // 
         btnHome.Font = new Font("Segoe UI Semibold", 9.25F, FontStyle.Bold);
@@ -83,30 +56,33 @@ partial class DaftarArtikel
         btnHome.UseVisualStyleBackColor = true;
         btnHome.Click += btnHome_Click;
         // 
-        // btnArticle1
+        // flowLayoutPanelArticle
         // 
-        btnArticle1.BackColor = Color.FromArgb(0, 192, 0);
-        btnArticle1.Font = new Font("Segoe UI Semibold", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btnArticle1.ForeColor = SystemColors.ButtonHighlight;
-        btnArticle1.Location = new Point(12, 86);
-        btnArticle1.Name = "btnArticle1";
-        btnArticle1.RightToLeft = RightToLeft.No;
-        btnArticle1.Size = new Size(776, 112);
-        btnArticle1.TabIndex = 10;
-        btnArticle1.Text = "Judul Artikel 1";
-        btnArticle1.TextAlign = ContentAlignment.MiddleLeft;
-        btnArticle1.UseVisualStyleBackColor = false;
-        btnArticle1.Click += btnArticle1_Click;
+        flowLayoutPanelArticle.AutoScroll = true;
+        flowLayoutPanelArticle.Location = new Point(12, 89);
+        flowLayoutPanelArticle.Name = "flowLayoutPanelArticle";
+        flowLayoutPanelArticle.Size = new Size(776, 400);
+        flowLayoutPanelArticle.TabIndex = 10;
+        // 
+        // btnTambah
+        // 
+        btnTambah.Font = new Font("Segoe UI Semibold", 9.25F, FontStyle.Bold);
+        btnTambah.Location = new Point(592, 42);
+        btnTambah.Name = "btnTambah";
+        btnTambah.Size = new Size(99, 38);
+        btnTambah.TabIndex = 11;
+        btnTambah.Text = "Tambah";
+        btnTambah.UseVisualStyleBackColor = true;
+        btnTambah.Click += btnTambah_Click;
         // 
         // DaftarArtikel
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 501);
-        Controls.Add(btnArticle1);
+        Controls.Add(btnTambah);
+        Controls.Add(flowLayoutPanelArticle);
         Controls.Add(btnHome);
-        Controls.Add(button2);
-        Controls.Add(button1);
         Controls.Add(lblLogo);
         Name = "DaftarArtikel";
         Text = "DaftarArtikel";
@@ -117,8 +93,7 @@ partial class DaftarArtikel
     #endregion
 
     private Label lblLogo;
-    private Button button1;
-    private Button button2;
     private Button btnHome;
-    private Button btnArticle1;
+    private FlowLayoutPanel flowLayoutPanelArticle;
+    private Button btnTambah;
 }

@@ -36,8 +36,7 @@ namespace CarbonQuest.GUI.Views
 
             try
             {
-                // TODO: Ganti dengan panggilan API sesungguhnya
-                bool loginSuccess = true;
+                bool loginSuccess = await APIClient.LoginAsync(formUsername.Text, formPassword.Text);
 
                 if (loginSuccess)
                 {

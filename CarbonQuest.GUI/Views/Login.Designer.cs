@@ -128,9 +128,8 @@ partial class Login
         lblError.ForeColor = Color.Red;
         lblError.Location = new Point(244, 182);
         lblError.Name = "lblError";
-        lblError.Size = new Size(157, 17);
+        lblError.Size = new Size(0, 17);
         lblError.TabIndex = 8;
-        lblError.Text = "error message goes here";
         lblError.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // cbxShowPw
