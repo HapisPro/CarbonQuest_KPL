@@ -98,10 +98,21 @@ namespace CarbonQuest.GUI.Controllers
         }
 
 
-        public static async Task<bool> SubmitCalculatorAnswersAsync(List<string> answers)
+        public static async Task<int?> SubmitCalculatorAnswersAsync(List<string> answers)
         {
             var response = await client.PostAsJsonAsync("Calculator/submit", answers);
-            return response.IsSuccessStatusCode;
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                var result = JsonHelper.Instance.FromJson<Dictionary<string, object>>(json);
+
+                if (result.TryGetValue("totalScore", out var scoreObj) && int.TryParse(scoreObj.ToString(), out var score))
+                {
+                    return score;
+                }
+            }
+
+            return null;
         }
 
         // ------------------- LEADERBOARD ---------------------
