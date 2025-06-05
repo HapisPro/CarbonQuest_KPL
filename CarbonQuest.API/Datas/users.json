@@ -3,8 +3,8 @@
     "id_user": "u1",
     "username": "Hapis",
     "password": "1998",
-    "score": 169,
-    "active": true
+    "score": 304,
+    "active": false
   },
   {
     "id_user": "u2",
