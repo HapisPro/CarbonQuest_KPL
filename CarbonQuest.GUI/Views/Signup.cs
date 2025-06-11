@@ -11,6 +11,7 @@ namespace CarbonQuest.GUI.Views
         {
             InitializeComponent();
 
+            // Logika untuk show password
             formPassword.UseSystemPasswordChar = true;
             cbxShowPw.CheckedChanged += (s, e) => formPassword.UseSystemPasswordChar = !cbxShowPw.Checked;
 
@@ -24,6 +25,7 @@ namespace CarbonQuest.GUI.Views
             btnSignup.Click += btnSignup_Click;
         }
 
+        // Method proses signup secara asynchronous untuk tidak memblokir UI.
         private async void btnSignup_Click(object sender, EventArgs e)
         {
             lblError.Visible = false;
@@ -35,6 +37,7 @@ namespace CarbonQuest.GUI.Views
                 return;
             }
 
+            // Secure coding untuk handle password
             if (!Validator.ValidatePassword(formPassword.Text))
             {
                 lblError.Text = "Password harus minimal 8 karakter, mengandung huruf besar dan simbol.";
@@ -54,6 +57,7 @@ namespace CarbonQuest.GUI.Views
                     this.Close();
                 }
             }
+            // Menangkap error dari sisi server (misal: username sudah ada) atau masalah koneksi.
             catch (Exception ex)
             {
                 lblError.Text = "Terjadi kesalahan: " + ex.Message;

@@ -10,6 +10,7 @@ namespace CarbonQuest.GUI.Views
         {
             InitializeComponent();
 
+            // Logika untuk show password
             formPassword.UseSystemPasswordChar = true;
             cbxShowPw.CheckedChanged += (s, e) => formPassword.UseSystemPasswordChar = !cbxShowPw.Checked;
 
@@ -23,6 +24,7 @@ namespace CarbonQuest.GUI.Views
             btnLogin.Click += btnLogin_Click;
         }
 
+        // Method proses login secara asynchronous untuk tidak memblokir UI.
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             lblError.Visible = false;
@@ -40,6 +42,7 @@ namespace CarbonQuest.GUI.Views
 
                 if (loginSuccess)
                 {
+                    // Simpan username ke state global agar bisa diakses di seluruh aplikasi.
                     AppState.Instance.LoggedInUsername = formUsername.Text;
 
                     Navigator.Instance.Navigate(AppRoute.Home);
@@ -51,6 +54,7 @@ namespace CarbonQuest.GUI.Views
                     lblError.Visible = true;
                 }
             }
+            // Menangani kemungkinan error saat pemanggilan API (misal: network error, server down).
             catch (Exception ex)
             {
                 lblError.Text = "Terjadi kesalahan: " + ex.Message;
